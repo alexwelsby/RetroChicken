@@ -1,7 +1,7 @@
 
 # RetroChicken Prototype / CGRA252
 
-![A brightly colored and friendly-looking pixel art main menu, depicting multi-colored air balloons and a bright blue sky with clouds. The title reads 'RETROCHICKEN', and there are three options: 'Start', 'Credits', and 'Quit'.](GameplayScreenshot.png)
+![A brightly colored and friendly-looking pixel art main menu, depicting multi-colored air balloons and a bright blue sky with clouds. The title reads 'RETROCHICKEN', and there are three options: 'Start', 'Credits', and 'Quit'.](GameplayScreenshot2.png)
 
 ![A brightly colored pixel game with many very odd chickens wandering a grassy pen. There are incubators present, and a mailbox in the lower right corner. Two chickens have been reduced to giblets by their fellow chickens.](GameplayScreenshot.png)
 
