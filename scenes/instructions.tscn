@@ -1,0 +1,213 @@
+[gd_scene load_steps=7 format=3 uid="uid://dar2ec3woghex"]
+
+[ext_resource type="FontFile" uid="uid://203pdobkt408" path="res://UI/upheavtt.ttf" id="1_pt86d"]
+[ext_resource type="Texture2D" uid="uid://dna86uc8pvqqy" path="res://sprites/peak_performance.png" id="2_5suw1"]
+
+[sub_resource type="Animation" id="Animation_xdhua"]
+resource_name = "FadeIn"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("IntroLogo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(585, 324), Vector2(584, 324)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("IntroLogo:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.847289, 0.846093), Vector2(0.711927, 0.711111)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_af7d1"]
+resource_name = "FadeOut"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_03pko"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("IntroLogo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(582.725, 328)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("IntroLogo:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.608104, 0.607407)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xohxr"]
+_data = {
+"FadeIn": SubResource("Animation_xdhua"),
+"FadeOut": SubResource("Animation_af7d1"),
+"RESET": SubResource("Animation_03pko")
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -766.0
+offset_top = -400.0
+offset_right = 2797.0
+offset_bottom = 1629.0
+color = Color(0, 0.607843, 0.85098, 1)
+
+[node name="GeneralHowTo" type="Label" parent="."]
+offset_left = 30.0
+offset_top = 4.0
+offset_right = 1322.0
+offset_bottom = 1404.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.185576, 0.240424, 0.449521, 1)
+theme_override_fonts/font = ExtResource("1_pt86d")
+theme_override_font_sizes/font_size = 64
+text = "How to play:
+
+Despite your previous failures, you have a surviving flock of five regular chickens that eat feed and cluck all day.
+
+To buy feed:
+hit the < Arrow button to open the menu and click on the Grain sack  [image] .
+
+To breed:
+Open the menu and click on two chickens. Due to your spending habits, you have expensive equipment that allows you to breed a chicken to itself. Double-click on a chicken to try, and then claim its egg from the egg button in the menu and click anywhere on the map to place it.
+
+To hatch: Once your egg is placed on the map, click the Hatch button to hatch it."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ExchangeRates" type="Label" parent="."]
+offset_left = 641.0
+offset_top = 5.0
+offset_right = 1933.0
+offset_bottom = 1405.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.185576, 0.240424, 0.449521, 1)
+theme_override_fonts/font = ExtResource("1_pt86d")
+theme_override_font_sizes/font_size = 64
+text = "Shop Exchange Rates:
+
+$40 = Chicken Feed
+$500 = Incubator
+$1500 = Nuclear Incubator
+
+You have $1400. After being blacklisted from all local farmer's markets, you have no way to make more. Good luck.
+
+
+
+<- THIS IS WHAT
+PEAK CHICKEN PERFORMANCE LOOKS LIKE."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(775, 381)
+texture = ExtResource("2_5suw1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = -869.0
+offset_top = -436.0
+offset_right = 982.0
+offset_bottom = 666.0
+scale = Vector2(2, 2)
+color = Color(0, 0, 0, 1)
+
+[node name="Fade" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xohxr")
+}
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1051.0
+offset_top = 556.0
+offset_right = 1132.0
+offset_bottom = 634.0
+theme_override_fonts/font = ExtResource("1_pt86d")
+theme_override_font_sizes/font_size = 64
+text = " > "

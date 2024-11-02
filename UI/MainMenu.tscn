@@ -1,0 +1,189 @@
+[gd_scene load_steps=19 format=3 uid="uid://dnikdkbsvjqsx"]
+
+[ext_resource type="Script" path="res://UI/MainMenu.gd" id="1_0ouyu"]
+[ext_resource type="Texture2D" uid="uid://qpuikn40puy7" path="res://UI/Art/BGM.png" id="2_nly62"]
+[ext_resource type="FontFile" uid="uid://203pdobkt408" path="res://UI/upheavtt.ttf" id="3_r52p5"]
+[ext_resource type="Texture2D" uid="uid://bcea6hsl4acpi" path="res://sprites/Egg.png" id="4_0ynki"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8twoe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_62770"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vp03p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_esu7g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_whvc1"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_vyq2c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fmuke"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xkayn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_epu8o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yspga"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eocxj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bafmb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1mu1x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_st6ee"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0ouyu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -329.0
+offset_top = -185.0
+offset_right = 1524.0
+offset_bottom = 942.0
+color = Color(0, 0.607843, 0.85098, 1)
+
+[node name="Bgm" type="Sprite2D" parent="."]
+position = Vector2(544, 251)
+scale = Vector2(8.34474, 8.34474)
+texture = ExtResource("2_nly62")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="(Title) VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Seperator" type="Control" parent="MarginContainer/(Title) VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="GameTitle" type="Label" parent="MarginContainer/(Title) VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.447761, 0.421062, 1)
+theme_override_colors/font_outline_color = Color(0.888544, 0.898459, 0.975973, 1)
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("3_r52p5")
+theme_override_font_sizes/font_size = 100
+text = "- retrochicken -
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Buttons"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Seperator4" type="Control" parent="MarginContainer/Buttons/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Start" type="Button" parent="MarginContainer/Buttons/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.927482, 0.538868, 0.493382, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.856985, 0.2049, 0.289885, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("3_r52p5")
+theme_override_font_sizes/font_size = 65
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8twoe")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_62770")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vp03p")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_esu7g")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_whvc1")
+text = "Start"
+icon = SubResource("ViewportTexture_vyq2c")
+
+[node name="Egg" type="Sprite2D" parent="MarginContainer/Buttons/VBoxContainer/Start"]
+visible = false
+position = Vector2(274, 26)
+scale = Vector2(3, 3)
+texture = ExtResource("4_0ynki")
+
+[node name="Seperator1" type="Control" parent="MarginContainer/Buttons/VBoxContainer"]
+layout_mode = 2
+
+[node name="Credits" type="Button" parent="MarginContainer/Buttons/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0.537255, 0.494118, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.858824, 0.203922, 0.290196, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("3_r52p5")
+theme_override_font_sizes/font_size = 65
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8twoe")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fmuke")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xkayn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_epu8o")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yspga")
+text = "Credits
+"
+icon = SubResource("ViewportTexture_vyq2c")
+
+[node name="Egg" type="Sprite2D" parent="MarginContainer/Buttons/VBoxContainer/Credits"]
+visible = false
+position = Vector2(325, 28)
+scale = Vector2(3, 3)
+texture = ExtResource("4_0ynki")
+
+[node name="Seperator3" type="Control" parent="MarginContainer/Buttons/VBoxContainer"]
+layout_mode = 2
+
+[node name="Quit" type="Button" parent="MarginContainer/Buttons/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0.537255, 0.494118, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.858824, 0.203922, 0.290196, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("3_r52p5")
+theme_override_font_sizes/font_size = 65
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8twoe")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eocxj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bafmb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1mu1x")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_st6ee")
+text = "Quit
+"
+icon = SubResource("ViewportTexture_vyq2c")
+
+[node name="Egg" type="Sprite2D" parent="MarginContainer/Buttons/VBoxContainer/Quit"]
+visible = false
+position = Vector2(274, 26)
+scale = Vector2(3, 3)
+texture = ExtResource("4_0ynki")
+
+[connection signal="mouse_entered" from="MarginContainer/Buttons/VBoxContainer/Start" to="." method="_on_start_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/Buttons/VBoxContainer/Start" to="." method="_on_start_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/Buttons/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/Buttons/VBoxContainer/Credits" to="." method="_on_credits_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/Buttons/VBoxContainer/Credits" to="." method="_on_credits_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/Buttons/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/Buttons/VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/Buttons/VBoxContainer/Quit" to="." method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/Buttons/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

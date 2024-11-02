@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://dt20tqgqv1w7p"]
+
+[ext_resource type="Script" path="res://UI/Story.gd" id="1_27fcx"]
+[ext_resource type="Texture2D" uid="uid://qpuikn40puy7" path="res://UI/Art/BGM.png" id="2_sp5s1"]
+[ext_resource type="Texture2D" uid="uid://bqaudo34l7cj8" path="res://UI/Art/Long button.png" id="3_es66n"]
+[ext_resource type="FontFile" uid="uid://203pdobkt408" path="res://UI/upheavtt.ttf" id="4_2kkih"]
+[ext_resource type="Texture2D" uid="uid://bkevhq46hnxwb" path="res://UI/Art/Block.png" id="5_ythyl"]
+[ext_resource type="Texture2D" uid="uid://db6puxvmxrmsn" path="res://UI/Art/Arrow.png" id="6_k6f14"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dko44"]
+atlas = ExtResource("3_es66n")
+region = Rect2(3.78493, 2.97424, 39.323, 23.3776)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shjy8"]
+atlas = ExtResource("5_ythyl")
+region = Rect2(7.43346, 66.0802, 19.9993, 19.8642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0df5q"]
+atlas = ExtResource("6_k6f14")
+region = Rect2(11.082, 7.83894, 10.405, 14.1887)
+
+[node name="Story" type="Node2D"]
+script = ExtResource("1_27fcx")
+
+[node name="Bgm" type="Sprite2D" parent="."]
+position = Vector2(544, 251)
+scale = Vector2(8.34474, 8.34474)
+texture = ExtResource("2_sp5s1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(574.625, 323.75)
+scale = Vector2(29.4679, 28.1087)
+texture = SubResource("AtlasTexture_dko44")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 157.0
+offset_top = 143.0
+offset_right = 7840.0
+offset_bottom = 3420.0
+scale = Vector2(0.11, 0.12)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.86576, 0.974759, 0.808408, 1)
+theme_override_colors/font_outline_color = Color(0.235294, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_2kkih")
+theme_override_font_sizes/font_size = 224
+text = "You're a disgraced biologist who has lost their funding (and potentially their career) due to the death of ethics and excess of lies displayed in your recent academic paper.
+
+Your path to redemption? Prove you can back-breed chickens into microraptors.
+
+Armed with your trusty chicken pen and whatever chicken feed you can afford on your remaining budget, you're ready to make scientific history. 
+
+As all famously ethical scientists say, you've got to crack a few hundred eggs to make a... microraptor! (Excuse me, RetroChicken™)
+
+GET CRACKING!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ToInst" type="TextureButton" parent="."]
+offset_left = 1034.0
+offset_top = 530.0
+offset_right = 1056.0
+offset_bottom = 552.0
+scale = Vector2(5, 5)
+texture_normal = SubResource("AtlasTexture_shjy8")
+
+[node name="Sprite2D" type="Sprite2D" parent="ToInst"]
+modulate = Color(0.758615, 0.585934, 0.335122, 1)
+position = Vector2(10.4, 9.20001)
+texture = SubResource("AtlasTexture_0df5q")
+
+[connection signal="pressed" from="ToInst" to="." method="_on_to_inst_pressed"]

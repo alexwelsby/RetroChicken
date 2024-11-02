@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://jowhauu72tir"
+path="res://.godot/imported/00 lolurio - Everyday Life .mp3-65c8c5bf239b4dc3384329ef9f076b50.mp3str"
+
+[deps]
+
+source_file="res://Sounds/00 lolurio - Everyday Life .mp3"
+dest_files=["res://.godot/imported/00 lolurio - Everyday Life .mp3-65c8c5bf239b4dc3384329ef9f076b50.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

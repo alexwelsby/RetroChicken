@@ -1,0 +1,181 @@
+[gd_scene load_steps=12 format=3 uid="uid://b2gp87ikywg12"]
+
+[ext_resource type="Script" path="res://scripts/chicken.gd" id="1_fkrbh"]
+[ext_resource type="Script" path="res://scripts/CompositeSpritesSc.gd" id="2_buyfq"]
+[ext_resource type="Texture2D" uid="uid://d50v20a6vb4h" path="res://sprites/chickens/Blood_explosion_32x32 by Virusystem.png" id="3_c0xqe"]
+
+[sub_resource type="Animation" id="Animation_disvd"]
+resource_name = "BloodSplatter"
+length = 0.83335
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.00256336, 0.0367415, 0.0709678, 0.106807, 0.140227, 0.176162, 0.212951),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0), Vector2i(6, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vyfih"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bfng1"]
+_data = {
+"BloodSplatter": SubResource("Animation_disvd"),
+"RESET": SubResource("Animation_vyfih")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8gh8s"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pdaa8"]
+radius = 29.0172
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n1xwm"]
+radius = 252.389
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5thhh"]
+radius = 33.0151
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7klnh"]
+
+[node name="Chicken" type="StaticBody2D"]
+script = ExtResource("1_fkrbh")
+
+[node name="BloodSplatter" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(2, 2)
+texture = ExtResource("3_c0xqe")
+hframes = 7
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BloodSplatter"]
+active = false
+libraries = {
+"": SubResource("AnimationLibrary_bfng1")
+}
+
+[node name="CompositeSprites" type="Node2D" parent="."]
+script = ExtResource("2_buyfq")
+
+[node name="Button" type="Button" parent="CompositeSprites"]
+modulate = Color(0, 0, 0, 0)
+self_modulate = Color(0, 0, 0, 0)
+offset_left = -25.0
+offset_top = -28.0
+offset_right = 25.0
+offset_bottom = 25.0
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 0)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 0)
+
+[node name="Body" type="Sprite2D" parent="CompositeSprites" groups=["chicken_sprites"]]
+scale = Vector2(2, 2)
+hframes = 4
+vframes = 4
+
+[node name="Comb" type="Sprite2D" parent="CompositeSprites" groups=["chicken_sprites"]]
+scale = Vector2(2, 2)
+hframes = 4
+vframes = 4
+
+[node name="Beak" type="Sprite2D" parent="CompositeSprites" groups=["chicken_sprites"]]
+scale = Vector2(2, 2)
+hframes = 4
+vframes = 4
+
+[node name="Tail" type="Sprite2D" parent="CompositeSprites" groups=["chicken_sprites"]]
+scale = Vector2(2, 2)
+hframes = 4
+vframes = 4
+
+[node name="Legs" type="Sprite2D" parent="CompositeSprites" groups=["chicken_sprites"]]
+scale = Vector2(2, 2)
+hframes = 4
+vframes = 4
+
+[node name="LegFeathers" type="Sprite2D" parent="CompositeSprites"]
+scale = Vector2(2, 2)
+hframes = 4
+vframes = 4
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+offset_left = -44.0
+offset_top = -59.0
+offset_right = 44.0
+offset_bottom = -32.0
+rounded = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.09
+
+[node name="BarHover" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BarHover"]
+shape = SubResource("CircleShape2D_8gh8s")
+
+[node name="WalkTimer" type="Timer" parent="."]
+
+[node name="EatBody" type="Area2D" parent="."]
+collision_mask = 15
+
+[node name="EatBodyShape" type="CollisionShape2D" parent="EatBody"]
+shape = SubResource("CircleShape2D_pdaa8")
+
+[node name="DetectBody" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 15
+
+[node name="DetectBodyShape" type="CollisionShape2D" parent="DetectBody"]
+shape = SubResource("CircleShape2D_n1xwm")
+disabled = true
+
+[node name="DeadToEat" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 15
+
+[node name="DeadToEatShape" type="CollisionShape2D" parent="DeadToEat"]
+shape = SubResource("CircleShape2D_5thhh")
+disabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7klnh")
+
+[connection signal="animation_finished" from="BloodSplatter/AnimationPlayer" to="." method="_on_bloodsplatter_animation_finished"]
+[connection signal="button_down" from="CompositeSprites/Button" to="." method="_on_button_button_down"]
+[connection signal="mouse_entered" from="CompositeSprites/Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="CompositeSprites/Button" to="." method="_on_button_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="BarHover" to="." method="_on_bar_hover_mouse_entered"]
+[connection signal="mouse_exited" from="BarHover" to="." method="_on_bar_hover_mouse_exited"]
+[connection signal="area_entered" from="EatBody" to="." method="_on_eat_body_area_entered"]
+[connection signal="area_entered" from="DetectBody" to="." method="_on_detect_body_area_entered"]
+[connection signal="area_entered" from="DeadToEat" to="." method="_on_dead_to_eat_area_entered"]

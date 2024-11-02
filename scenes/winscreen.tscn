@@ -1,0 +1,97 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3kx1rgk0o1nh"]
+
+[ext_resource type="Script" path="res://scripts/winscreen.gd" id="1_w3oby"]
+[ext_resource type="Texture2D" uid="uid://bqaudo34l7cj8" path="res://UI/Art/Long button.png" id="2_bkdmt"]
+[ext_resource type="Texture2D" uid="uid://dna86uc8pvqqy" path="res://sprites/peak_performance.png" id="3_t7sxu"]
+[ext_resource type="FontFile" uid="uid://203pdobkt408" path="res://UI/upheavtt.ttf" id="4_8g7de"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ytxbb"]
+texture = ExtResource("2_bkdmt")
+texture_margin_left = 7.0
+texture_margin_top = 6.0
+texture_margin_right = 49.0
+texture_margin_bottom = 66.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v24ca"]
+bg_color = Color(0.581841, 0.591937, 0.694476, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchor_right = 0.935
+anchor_bottom = 0.97
+offset_left = -542.0
+offset_top = -295.0
+offset_right = -479.12
+offset_bottom = -271.56
+script = ExtResource("1_w3oby")
+
+[node name="panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 257.0
+offset_top = 44.0
+offset_right = 1008.0
+offset_bottom = 554.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ytxbb")
+
+[node name="chickenTextureRect" type="TextureRect" parent="panel"]
+layout_mode = 2
+offset_left = 88.0
+offset_top = 187.0
+offset_right = 203.0
+offset_bottom = 299.0
+texture = ExtResource("3_t7sxu")
+expand_mode = 1
+
+[node name="MircorapterPercentLabel" type="Label" parent="panel"]
+layout_mode = 2
+offset_left = 349.0
+offset_top = 263.0
+offset_right = 596.0
+offset_bottom = 323.0
+
+[node name="traits" type="RichTextLabel" parent="panel"]
+layout_mode = 2
+offset_left = 256.0
+offset_top = 153.0
+offset_right = 499.0
+offset_bottom = 201.0
+theme_override_fonts/normal_font = ExtResource("4_8g7de")
+
+[node name="ContinueButton" type="Button" parent="panel"]
+layout_mode = 2
+offset_left = 450.0
+offset_top = 346.0
+offset_right = 800.0
+offset_bottom = 412.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("4_8g7de")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxFlat_v24ca")
+text = " Continue "
+
+[node name="Label" type="Label" parent="panel"]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 309.0
+offset_right = 289.0
+offset_bottom = 363.0
+scale = Vector2(0.12, 0.12)
+theme_override_fonts/font = ExtResource("4_8g7de")
+theme_override_font_sizes/font_size = 128
+text = "Not over yet!
+Keep going to find
+the full mircroraptor "
+
+[node name="Label2" type="Label" parent="panel"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 111.0
+offset_right = 1116.0
+offset_bottom = 230.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("4_8g7de")
+theme_override_font_sizes/font_size = 64
+text = " You have bred a Chicken with 
+majority microraptor traits!"
+
+[connection signal="pressed" from="panel/ContinueButton" to="." method="_on_continue_button_pressed"]

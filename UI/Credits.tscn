@@ -1,0 +1,266 @@
+[gd_scene load_steps=21 format=3 uid="uid://u1yh6viua28w"]
+
+[ext_resource type="Script" path="res://UI/Credits.gd" id="1_8v288"]
+[ext_resource type="Texture2D" uid="uid://qpuikn40puy7" path="res://UI/Art/BGM.png" id="2_snhhf"]
+[ext_resource type="FontFile" uid="uid://203pdobkt408" path="res://UI/upheavtt.ttf" id="3_5ngng"]
+[ext_resource type="Texture2D" uid="uid://bkevhq46hnxwb" path="res://UI/Art/Block.png" id="4_vhbc7"]
+
+[sub_resource type="Animation" id="Animation_dxp06"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(253, 644)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(585.981, 1661.88)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Sprite2D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(557.981, 963.875)]
+}
+
+[sub_resource type="Animation" id="Animation_lo6d7"]
+resource_name = "Rolling Credits"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(252.981, 811.875), Vector2(249.981, -1432.12)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(585.981, 1661.88), Vector2(582.981, -582.125)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Sprite2D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(557.981, 963.875), Vector2(554.981, -1280.12)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qdnpj"]
+_data = {
+"RESET": SubResource("Animation_dxp06"),
+"Rolling Credits": SubResource("Animation_lo6d7")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yvk1"]
+region = Rect2(79.8155, 95.2794, 33.04, 34.0293)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gk16"]
+region = Rect2(79.381, 93.6355, 32.4465, 26.9069)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5p25g"]
+atlas = ExtResource("4_vhbc7")
+region = Rect2(6.89294, 65.5397, 21.2155, 20.4047)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qweim"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_keygy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xmivk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ybfg8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yo26e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kn7tt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_smxry"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8oota"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_onii7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i2msd"]
+
+[node name="Options" type="Node2D"]
+position = Vector2(23, 20)
+script = ExtResource("1_8v288")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -396.0
+offset_top = -133.0
+offset_right = 1551.0
+offset_bottom = 851.0
+color = Color(0, 0.607843, 0.85098, 1)
+
+[node name="Bgm" type="Sprite2D" parent="."]
+position = Vector2(519, 231)
+scale = Vector2(8.34474, 8.34474)
+texture = ExtResource("2_snhhf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Credits")
+libraries = {
+"": SubResource("AnimationLibrary_qdnpj")
+}
+autoplay = "Rolling Credits"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(585.981, 1661.88)
+scale = Vector2(29.697, 27.7353)
+texture = SubResource("AtlasTexture_3yvk1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(557.981, 963.875)
+scale = Vector2(29.6863, 35.6058)
+texture = SubResource("AtlasTexture_5gk16")
+
+[node name="Credits" type="Label" parent="."]
+offset_left = 253.0
+offset_top = 644.0
+offset_right = 1547.0
+offset_bottom = 2959.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0.266667, 0.796078, 1)
+theme_override_fonts/font = ExtResource("3_5ngng")
+theme_override_font_sizes/font_size = 64
+text = "LICENSE for All Assets: All Assests sourced from itch.io 
+under Creative Commons Zero (CC0) 
+
+
+MUSIC
+lolurio (lolurio.carrd.co)  Background soundtrack
+:
+:
+:
+Sound effects
+SoundSnap: Chick chirp 03 SFXBible ss00118
+
+Sound Effect pixabay.com: 
+- chicken single call
+- gravel step
+:
+:
+:
+Chicken base
+PixelPlant's Free Animated Chicken Sprite Sheet 
+:
+:
+:
+Tileset
+Schwarnhild's Basic Tileset and Asset Pack
+
+
+Game Designed and Coded by Evie Melhuish, Alex Welsby, Olivia Beauch, Tim Green
+
+Team 5
+ CGRA252 2024"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 254.0
+offset_top = -537.0
+offset_right = 887.0
+offset_bottom = 76.0
+color = Color(0.00392157, 0.694118, 0.968627, 1)
+
+[node name="GameTitle" type="Label" parent="."]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 134.0
+offset_top = 18.0
+offset_right = 998.0
+offset_bottom = 69.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.532164, 0.900866, 1)
+theme_override_colors/font_outline_color = Color(0.725515, 0.901183, 1, 1)
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("3_5ngng")
+theme_override_font_sizes/font_size = 50
+text = "Thanks For Playing!
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(86, 99)
+scale = Vector2(10.55, 10.55)
+texture = SubResource("AtlasTexture_5p25g")
+
+[node name="ReplayButton" type="Button" parent="."]
+offset_left = 42.0
+offset_top = 16.0
+offset_right = 111.0
+offset_bottom = 101.0
+scale = Vector2(1.5, 1.5)
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.67451, 0.784314, 1, 1)
+theme_override_fonts/font = ExtResource("3_5ngng")
+theme_override_font_sizes/font_size = 92
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qweim")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_keygy")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xmivk")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ybfg8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yo26e")
+text = "⟳"
+
+[node name="Menu" type="Button" parent="."]
+offset_left = 18.0
+offset_top = 129.0
+offset_right = 311.0
+offset_bottom = 212.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.674276, 0.782455, 1, 1)
+theme_override_fonts/font = ExtResource("3_5ngng")
+theme_override_font_sizes/font_size = 92
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kn7tt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_smxry")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8oota")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_onii7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i2msd")
+text = " Menu "
+
+[connection signal="pressed" from="ReplayButton" to="." method="_on_replay_button_pressed"]
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
