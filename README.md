@@ -9,12 +9,12 @@
 ### Synopsis
 You are a disgraced biologist who’s lost their funding - and maybe their career! - due to the dearth of ethics and excess of lies displayed in your recent academic paper. In order to redeem yourself, you need to provide evidence that you’ve successfully backbred chickens into microraptors - nay, call them RetroChickens™. 
 
-You have your humble studio tiny home, an ever-growing backyard chicken pen, and as much chicken feed as you can buy on your remaining budget. As so many famously ethical scientists say, you’ve got to crack a few hundred eggs to make a… microraptor? (Excuse me, RetroChicken™). 
+You have an ever-growing backyard chicken pen and as much chicken feed as you can buy on your remaining budget. As so many famously ethical scientists say, you’ve got to crack a few hundred eggs to make a… microraptor? (Excuse me, RetroChicken™). 
 
 Anyway, get cracking!
 
 ### To play
-Download or clone this repo, then run the .exe file within the folder.
+Download the zip found [here](https://github.com/DrerAhv/RetroChicken/releases/tag/1.0.0), unzip it, then run RetroChicken.exe.
 
 ### Controls
 
