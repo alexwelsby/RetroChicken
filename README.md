@@ -30,7 +30,7 @@ This is a 'clicker game'. You're going to be using that left mouse button.
 - Evie Melhuish: Artist, coder 
 - Alex Welsby (@DrerAhv): Coder
 - Timothy Green: Coder
-- Olivia Beauch: Coder
+- Olivia Beauchamp: Coder
 
 
 ### Assets used:
