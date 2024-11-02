@@ -29,10 +29,10 @@ This is a 'clicker game'. You're going to be using that left mouse button.
 **To sell eggs**: When you've bred two chickens, click on the Egg button and bring the egg over to the Mailbox in the lower right corner, then click on the mailbox to sell the egg. 
 
 ## Credits
-- Evie Melhuish: Artist, coder 
-- Alex Welsby (@DrerAhv): Coder
-- Timothy Green: Coder
-- Olivia Beauchamp: Coder
+- Evie Melhuish: Artist, coder for chicken hunger, carnivory, feeding, walking, routing & more
+- Alex Welsby (@DrerAhv): Coder for genetics, breeding, omnivory, mailbox & more
+- Timothy Green: Coder for incubators
+- Olivia Beauchamp: Coder for win screen
 
 
 ## Assets used:
