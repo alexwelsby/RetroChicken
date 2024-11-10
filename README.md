@@ -30,7 +30,7 @@ This is a 'clicker game'. You're going to be using that left mouse button.
 
 ## Credits
 - Evie Melhuish ([@BionicReader](https://github.com/BionicReader)): Artist, coder for chicken hunger, carnivory, feeding, walking, routing & more
-- Alex Welsby ([@DrerAhv](https://github.com/DrerAhv)): Coder for genetics, breeding, omnivory, mailbox & more
+- Alex Welsby ([@alexwelsby](https://github.com/alexwelsby)): Coder for genetics, breeding, omnivory, mailbox & more
 - Timothy Green ([@TFLGamer](https://github.com/TFLGamer)): Coder for incubators
 - Olivia Beauchamp: Coder for win screen
 
