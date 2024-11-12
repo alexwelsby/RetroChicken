@@ -14,7 +14,7 @@ You have an ever-growing backyard chicken pen and as much chicken feed as you ca
 Anyway, get cracking!
 
 ## To play
-Download the zip found [here](https://github.com/alexwelsby/RetroChicken/releases/tag/1.0.0), unzip it, then run RetroChicken.exe.
+Download the zip found [here](https://github.com/alexwelsby/RetroChicken/releases/tag/1.0.1), unzip it, then run RetroChicken.exe.
 
 ## Controls
 
