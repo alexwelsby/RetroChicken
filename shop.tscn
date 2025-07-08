@@ -1,0 +1,139 @@
+[gd_scene load_steps=22 format=3 uid="uid://8jflg0bylxc3"]
+
+[ext_resource type="Script" path="res://scripts/shop.gd" id="1_mja34"]
+[ext_resource type="Texture2D" uid="uid://duf4ohtr03ymr" path="res://UI/Art/Bag.png" id="2_4u802"]
+[ext_resource type="Texture2D" uid="uid://bydtvyyugtj8c" path="res://UI/Art/Apple.png" id="3_lslmh"]
+[ext_resource type="Texture2D" uid="uid://c4ygopl7a5ne0" path="res://Art/Incubators.png" id="5_wx3m7"]
+[ext_resource type="AudioStream" uid="uid://cvlwtj8l3yhhn" path="res://Sounds/left-gravel-footstep-3-80282.mp3" id="6_rdld4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h4s5m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ktke"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_adhh0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8rni2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xudan"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0tt5"]
+atlas = ExtResource("2_4u802")
+region = Rect2(0.266846, 0.430984, 21.6209, 25.5397)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g33xv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lcv32"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_frfm1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_erixx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bs0fy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xeq30"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7k41q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s7meg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w7tjn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gdt4k"]
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchor_left = 0.428819
+anchor_top = 0.83179
+anchor_right = 0.710938
+anchor_bottom = 1.0
+offset_left = -108.999
+offset_top = 241.0
+offset_right = -434.001
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+script = ExtResource("1_mja34")
+
+[node name="ChickenFeedButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = -235.0
+offset_top = -194.0
+offset_right = -155.0
+offset_bottom = -114.0
+theme_type_variation = &"FlatButton"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h4s5m")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1ktke")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_adhh0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_8rni2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xudan")
+
+[node name="Sprite2DDebt" type="Sprite2D" parent="ChickenFeedButton"]
+modulate = Color(0.643137, 0.447059, 0.447059, 0.705882)
+position = Vector2(43, 38.0001)
+scale = Vector2(1.92, 1.92)
+texture = ExtResource("2_4u802")
+
+[node name="Sprite2D" type="Sprite2D" parent="ChickenFeedButton"]
+position = Vector2(43, 38.0001)
+scale = Vector2(2.07999, 2)
+texture = SubResource("AtlasTexture_h0tt5")
+
+[node name="AppleButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -130.0
+offset_right = -13.0
+offset_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_type_variation = &"FlatButton"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g33xv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_lcv32")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_frfm1")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_erixx")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bs0fy")
+
+[node name="Sprite2DDebt" type="Sprite2D" parent="AppleButton"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(0, 72)
+scale = Vector2(2, 2)
+texture = ExtResource("3_lslmh")
+
+[node name="Sprite2D" type="Sprite2D" parent="AppleButton"]
+position = Vector2(0, 72.0001)
+scale = Vector2(2, 2)
+texture = ExtResource("3_lslmh")
+
+[node name="IncubatorButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = -48.0
+offset_top = -11.9999
+offset_right = 32.0
+offset_bottom = 68.0002
+theme_type_variation = &"FlatButton"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xeq30")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7k41q")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s7meg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_w7tjn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gdt4k")
+
+[node name="Sprite2DDebt" type="Sprite2D" parent="IncubatorButton"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(39, 35.0001)
+texture = ExtResource("5_wx3m7")
+
+[node name="Sprite2D" type="Sprite2D" parent="IncubatorButton"]
+position = Vector2(39, 35.0001)
+texture = ExtResource("5_wx3m7")
+
+[node name="place" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_rdld4")
+
+[connection signal="pressed" from="ChickenFeedButton" to="." method="_on_chicken_feed_button_pressed"]
+[connection signal="pressed" from="AppleButton" to="." method="_on_nuclear_incubator_button_pressed"]
+[connection signal="pressed" from="IncubatorButton" to="." method="_on_incubator_button_pressed"]
