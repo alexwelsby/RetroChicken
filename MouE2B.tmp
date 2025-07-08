@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=3 uid="uid://dsd8cijxtlu8t"]
+
+[ext_resource type="Texture2D" uid="uid://c054cf1otqjy2" path="res://sprites/Mouse.png" id="1_jq02v"]
+[ext_resource type="Script" path="res://scenes/Mouse.gd" id="2_nh1jm"]
+
+[sub_resource type="Animation" id="Animation_jbovy"]
+resource_name = "Default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_xurbe"]
+resource_name = "Danger"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_4hu8r"]
+resource_name = "Interactable"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_l4bp1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_insdf"]
+_data = {
+"Danger": SubResource("Animation_xurbe"),
+"Default": SubResource("Animation_jbovy"),
+"Interactable": SubResource("Animation_4hu8r"),
+"RESET": SubResource("Animation_l4bp1")
+}
+
+[node name="Mouse" type="Node2D"]
+script = ExtResource("2_nh1jm")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_jq02v")
+vframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite")
+libraries = {
+"": SubResource("AnimationLibrary_insdf")
+}

@@ -1,0 +1,108 @@
+[gd_scene load_steps=11 format=3 uid="uid://yj8yjiruta73"]
+
+[ext_resource type="Script" uid="uid://c46w73gybq80p" path="res://UI/Inst.gd" id="1_o8uxj"]
+[ext_resource type="Texture2D" uid="uid://qpuikn40puy7" path="res://UI/Art/BGM.png" id="2_01oo7"]
+[ext_resource type="Texture2D" uid="uid://bqaudo34l7cj8" path="res://UI/Art/Long button.png" id="3_b42tb"]
+[ext_resource type="FontFile" uid="uid://203pdobkt408" path="res://UI/upheavtt.ttf" id="4_4573q"]
+[ext_resource type="Texture2D" uid="uid://bcea6hsl4acpi" path="res://sprites/Egg.png" id="5_myitm"]
+[ext_resource type="Texture2D" uid="uid://bkevhq46hnxwb" path="res://UI/Art/Block.png" id="6_i0lby"]
+[ext_resource type="Texture2D" uid="uid://db6puxvmxrmsn" path="res://UI/Art/Arrow.png" id="7_g7y7a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jga7f"]
+atlas = ExtResource("3_b42tb")
+region = Rect2(3.78493, 2.97424, 39.323, 23.3776)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l82by"]
+atlas = ExtResource("6_i0lby")
+region = Rect2(7.43346, 66.0802, 19.9993, 19.8642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftewd"]
+atlas = ExtResource("7_g7y7a")
+region = Rect2(11.082, 7.83894, 10.405, 14.1887)
+
+[node name="Inst" type="Node2D"]
+script = ExtResource("1_o8uxj")
+
+[node name="Bgm" type="Sprite2D" parent="."]
+position = Vector2(588, 347)
+scale = Vector2(9.50799, 10.1934)
+texture = ExtResource("2_01oo7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(574.625, 323.75)
+scale = Vector2(29.4679, 28.1087)
+texture = SubResource("AtlasTexture_jga7f")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 154.0
+offset_top = 158.0
+offset_right = 3718.0
+offset_bottom = 5690.0
+scale = Vector2(0.11, 0.11)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.86576, 0.974759, 0.808408, 1)
+theme_override_colors/font_outline_color = Color(0.235294, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_4573q")
+theme_override_font_sizes/font_size = 224
+text = "HOW TO PLAY:
+
+Click-based game - open menu in bottom left for store & egg collection
+
+To breed: Click one chicken, then another. Collect egg from menu
+Hatch eggs by placing them in incubators (purchased from store)
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 619.0
+offset_top = 151.0
+offset_right = 4264.0
+offset_bottom = 5683.0
+scale = Vector2(0.11, 0.11)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.86576, 0.974759, 0.808408, 1)
+theme_override_colors/font_outline_color = Color(0.235294, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_4573q")
+theme_override_font_sizes/font_size = 224
+text = "
+Make money: Sell eggs via postbox in bottom right corner
+Keep an eye on your balance (top left) to buy food and incubators
+
+Remember: Chickens need food to survive, and some evolved ones might eat their deceased friends!
+
+Goal: Back-breed these chickens into microraptors... for science!"
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = -869.0
+offset_top = -436.0
+offset_right = 982.0
+offset_bottom = 666.0
+scale = Vector2(2, 2)
+color = Color(0, 0, 0, 0)
+
+[node name="Egg" type="Sprite2D" parent="."]
+position = Vector2(343, 493)
+scale = Vector2(4.55882, 4.55882)
+texture = ExtResource("5_myitm")
+
+[node name="START" type="TextureButton" parent="."]
+offset_left = 1034.0
+offset_top = 530.0
+offset_right = 1056.0
+offset_bottom = 552.0
+scale = Vector2(5, 5)
+texture_normal = SubResource("AtlasTexture_l82by")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="START"]
+modulate = Color(0.758615, 0.585934, 0.335122, 1)
+position = Vector2(10.4, 9.20001)
+texture = SubResource("AtlasTexture_ftewd")
+
+[connection signal="pressed" from="START" to="." method="_on_start_pressed"]

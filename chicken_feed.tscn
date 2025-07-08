@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://w28hgwmgdpjs"]
+
+[ext_resource type="Script" path="res://scripts/chicken_feed.gd" id="1_j6adv"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_byfxp"]
+load_path = "res://.godot/imported/Seeds.png-f30637b7d86ec3f9a112ecacb051b5fb.ctex"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r31cb"]
+radius = 18.0
+height = 92.0
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_j6adv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(59, 86)
+scale = Vector2(3, 3)
+texture = SubResource("CompressedTexture2D_byfxp")
+
+[node name="FeedToEat" type="Area2D" parent="."]
+collision_layer = 2
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FeedToEat"]
+position = Vector2(0, -2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_r31cb")
+disabled = true
+
+[connection signal="area_entered" from="FeedToEat" to="." method="_on_feed_to_eat_area_entered"]

@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfgbnjh2mx8dr"]
+
+[ext_resource type="Script" path="res://scripts/Incubator.gd" id="1_gwjfh"]
+[ext_resource type="Texture2D" uid="uid://c4ygopl7a5ne0" path="res://Art/Incubators.png" id="2_s0k5c"]
+[ext_resource type="AudioStream" uid="uid://crt8xi1atx72i" path="res://Sounds/98625-Chick_chirp_03-SFXBible-ss00118.mp3" id="3_lc1k1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4swtl"]
+size = Vector2(86, 97)
+
+[node name="Incubator" type="CharacterBody2D"]
+script = ExtResource("1_gwjfh")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -15.0
+offset_top = -65.0
+offset_right = 25.0
+offset_bottom = -42.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_s0k5c")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3, 1)
+shape = SubResource("RectangleShape2D_4swtl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 1)
+shape = SubResource("RectangleShape2D_4swtl")
+
+[node name="chirp" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_lc1k1")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
