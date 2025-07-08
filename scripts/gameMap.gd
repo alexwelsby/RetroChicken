@@ -332,14 +332,30 @@ func _on_home_pressed():
 func _on_close_home_pressed():
 	home_menu.visible = false
 	Engine.time_scale = 1
+	
+	
 
 
 func _on_quit_pressed():
 	get_tree().quit()
 
 func _on_end_pressed():
+	Engine.time_scale = 1
 	get_tree().change_scene_to_file("res://UI/MainMenu.tscn")
 
+func _on_guide_pressed() -> void:
+	$Instructions/Sprite2D.visible = true
+	$Instructions/Label.visible = true
+	$Instructions/Label2.visible = true
+	$Instructions/START.visible = true
+	home_menu.visible = false
+	
+func _on_start_pressed() -> void:
+	$Instructions/Sprite2D.visible = false
+	$Instructions/Label.visible = false
+	$Instructions/Label2.visible = false
+	$Instructions/START.visible = false
+	home_menu.visible = true
 	
 func resetCursorEgg(egg):
 	Input.set_custom_mouse_cursor(null)
