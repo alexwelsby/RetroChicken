@@ -1,8 +1,9 @@
-[gd_scene load_steps=39 format=3 uid="uid://di4nrx4ljse0x"]
+[gd_scene load_steps=48 format=3 uid="uid://di4nrx4ljse0x"]
 
-[ext_resource type="Script" path="res://scripts/gameMap.gd" id="1_3w3j0"]
+[ext_resource type="Script" uid="uid://b1tf6jxsb10pu" path="res://scripts/gameMap.gd" id="1_3w3j0"]
 [ext_resource type="Texture2D" uid="uid://bhono4exye04i" path="res://sprites/schwarnhild_basic_tileset_and_assets_32x32_standard_v2/terrain_tiles_v2.png" id="1_qfkgu"]
-[ext_resource type="Script" path="res://scripts/GlobalManager.gd" id="2_14xff"]
+[ext_resource type="Script" uid="uid://cg3ueqm3qvjfr" path="res://scripts/GlobalManager.gd" id="2_14xff"]
+[ext_resource type="Texture2D" uid="uid://bqaudo34l7cj8" path="res://UI/Art/Long button.png" id="2_s2eck"]
 [ext_resource type="Texture2D" uid="uid://dww8qty358vge" path="res://sprites/schwarnhild_basic_tileset_and_assets_32x32_standard_v2/decorations.png" id="3_sb7mm"]
 [ext_resource type="Texture2D" uid="uid://c5dr3sjok7sgm" path="res://sprites/schwarnhild_basic_tileset_and_assets_32x32_standard_v2/fence_tiles.png" id="4_avnk0"]
 [ext_resource type="FontFile" uid="uid://203pdobkt408" path="res://UI/upheavtt.ttf" id="6_l5u14"]
@@ -15,6 +16,18 @@
 [ext_resource type="AudioStream" uid="uid://cvlwtj8l3yhhn" path="res://Sounds/left-gravel-footstep-3-80282.mp3" id="15_m58i3"]
 [ext_resource type="PackedScene" uid="uid://b45gs1pptx33c" path="res://scenes/Mailbox.tscn" id="17_gt87k"]
 [ext_resource type="PackedScene" uid="uid://bfgbnjh2mx8dr" path="res://scenes/incubator.tscn" id="17_kc7hs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qc6e0"]
+atlas = ExtResource("2_s2eck")
+region = Rect2(3.78493, 2.97424, 39.323, 23.3776)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5vo2"]
+atlas = ExtResource("6_r18aa")
+region = Rect2(7.43346, 66.0802, 19.9993, 19.8642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfyha"]
+atlas = ExtResource("9_bg3wv")
+region = Rect2(11.082, 7.83894, 10.405, 14.1887)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_68a20"]
 texture = ExtResource("1_qfkgu")
@@ -689,16 +702,26 @@ region = Rect2(7.77051, 7.2433, 15.1346, 13.3779)
 atlas = ExtResource("8_2462u")
 region = Rect2(4.86597, 3.37963, 21.756, 22.2965)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ybjs7"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bwkde"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ay0mb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3rlua"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f07tl"]
 bg_color = Color(0.436519, 0.250199, 0.0483696, 0.835294)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ay0mb"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ybjs7"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bwkde"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bpd3o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_en7f7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s2eck"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ulvt3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qc6e0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bsy5c"]
 atlas = ExtResource("9_bg3wv")
@@ -992,13 +1015,90 @@ tracks/7/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sowyu"]
 _data = {
-"CloseMenu": SubResource("Animation_yffw2"),
-"OpenMenu": SubResource("Animation_qldu4"),
-"RESET": SubResource("Animation_5dq6r")
+&"CloseMenu": SubResource("Animation_yffw2"),
+&"OpenMenu": SubResource("Animation_qldu4"),
+&"RESET": SubResource("Animation_5dq6r")
 }
 
 [node name="MainGame" type="Node2D"]
 script = ExtResource("1_3w3j0")
+
+[node name="Instructions" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Instructions"]
+visible = false
+position = Vector2(-2, -93)
+scale = Vector2(19.6908, 18.7826)
+texture = SubResource("AtlasTexture_qc6e0")
+
+[node name="Label" type="Label" parent="Instructions"]
+visible = false
+anchors_preset = -1
+anchor_top = -5.06404
+anchor_bottom = -5.06404
+offset_left = -281.001
+offset_top = 3069.5
+offset_right = 2608.0
+offset_bottom = 6756.5
+scale = Vector2(0.09, 0.09)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.86576, 0.974759, 0.808408, 1)
+theme_override_colors/font_outline_color = Color(0.235294, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_l5u14")
+theme_override_font_sizes/font_size = 224
+text = "HOW TO PLAY:
+
+Click-based game - open menu in bottom left for store & egg collection
+
+To breed: Click one chicken, then another. Collect egg from menu
+Hatch eggs by placing them in incubators (purchased from store)
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="Instructions"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.14
+anchor_top = -0.113
+anchor_right = 0.14
+anchor_bottom = -0.113
+offset_left = -128.28
+offset_top = -144.776
+offset_right = 3084.72
+offset_bottom = 4894.22
+scale = Vector2(0.08, 0.08)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.86576, 0.974759, 0.808408, 1)
+theme_override_colors/font_outline_color = Color(0.235294, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_l5u14")
+theme_override_font_sizes/font_size = 224
+text = "
+Make money: Sell eggs via postbox in bottom right corner
+Keep an eye on your balance (top left) to buy food and incubators
+
+Remember: Chickens need food to survive, and some evolved ones might eat their deceased friends!
+
+Goal: Back-breed these chickens into microraptors... for science!"
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="START" type="TextureButton" parent="Instructions"]
+visible = false
+offset_left = 274.0
+offset_top = 18.0
+offset_right = 296.0
+offset_bottom = 40.0
+scale = Vector2(5, 5)
+texture_normal = SubResource("AtlasTexture_u5vo2")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Instructions/START"]
+modulate = Color(0.758615, 0.585934, 0.335122, 1)
+position = Vector2(10.4, 9.20001)
+texture = SubResource("AtlasTexture_wfyha")
 
 [node name="GlobalManager" type="Node" parent="."]
 unique_name_in_owner = true
@@ -1237,35 +1337,50 @@ scale = Vector2(17.619, 15.1818)
 texture = SubResource("AtlasTexture_avdn0")
 
 [node name="Quit" type="Button" parent="MenuUI/MenuPopUp/HomeMenu"]
-offset_left = -4.31351
-offset_top = 3.22754
-offset_right = 289.687
-offset_bottom = 119.228
-scale = Vector2(0.03, 0.03)
+offset_left = -3.46217
+offset_top = 3.7545
+offset_right = 290.538
+offset_bottom = 119.755
+scale = Vector2(0.025, 0.025)
 theme_override_fonts/font = ExtResource("6_l5u14")
 theme_override_font_sizes/font_size = 128
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ybjs7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bwkde")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ay0mb")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_3rlua")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_f07tl")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_ay0mb")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_bwkde")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ybjs7")
 text = "Quit"
 
 [node name="End" type="Button" parent="MenuUI/MenuPopUp/HomeMenu"]
-offset_left = -10.5
-offset_top = -6.05988
-offset_right = 740.5
-offset_bottom = 225.94
-scale = Vector2(0.03, 0.03)
+offset_left = -9.36489
+offset_top = -6.6527
+offset_right = 741.635
+offset_bottom = 225.347
+scale = Vector2(0.025, 0.025)
 theme_override_fonts/font = ExtResource("6_l5u14")
 theme_override_font_sizes/font_size = 128
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ybjs7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bwkde")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ay0mb")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_3rlua")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_f07tl")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_ay0mb")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_bwkde")
-text = "End
-Game"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ybjs7")
+text = "Menu
+"
+
+[node name="Guide" type="Button" parent="MenuUI/MenuPopUp/HomeMenu"]
+offset_left = -10.7838
+offset_top = -1.38324
+offset_right = 885.216
+offset_bottom = 114.617
+scale = Vector2(0.025, 0.025)
+theme_override_fonts/font = ExtResource("6_l5u14")
+theme_override_font_sizes/font_size = 128
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bpd3o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_en7f7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s2eck")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ulvt3")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qc6e0")
+text = "Guide"
 
 [node name="CloseHome" type="TextureButton" parent="MenuUI/MenuPopUp/HomeMenu"]
 offset_left = -9.77273
@@ -1278,7 +1393,7 @@ texture_normal = SubResource("AtlasTexture_bsy5c")
 
 [node name="UIMenuAni" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_sowyu")
+&"": SubResource("AnimationLibrary_sowyu")
 }
 autoplay = "CloseMenu"
 
@@ -1297,6 +1412,7 @@ position = Vector2(494, -236)
 position = Vector2(549, 282)
 scale = Vector2(2, 2)
 
+[connection signal="pressed" from="Instructions/START" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="TakeGeneticSampleButton" to="." method="_on_take_genetic_sample_button_pressed"]
 [connection signal="pressed" from="UILayer_GeneticSample/UI_Parent1/B1" to="." method="_on_b_1_pressed"]
 [connection signal="pressed" from="UILayer_GeneticSample/UI_Parent2/B2" to="." method="_on_b_2_pressed"]
@@ -1306,4 +1422,5 @@ scale = Vector2(2, 2)
 [connection signal="pressed" from="MenuUI/Home" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="MenuUI/MenuPopUp/HomeMenu/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="MenuUI/MenuPopUp/HomeMenu/End" to="." method="_on_end_pressed"]
+[connection signal="pressed" from="MenuUI/MenuPopUp/HomeMenu/Guide" to="." method="_on_guide_pressed"]
 [connection signal="pressed" from="MenuUI/MenuPopUp/HomeMenu/CloseHome" to="." method="_on_close_home_pressed"]

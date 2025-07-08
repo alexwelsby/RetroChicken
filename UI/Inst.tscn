@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://yj8yjiruta73"]
 
-[ext_resource type="Script" path="res://UI/Inst.gd" id="1_o8uxj"]
+[ext_resource type="Script" uid="uid://ppphwjixdog8" path="res://UI/Inst.gd" id="1_xcmhv"]
 [ext_resource type="Texture2D" uid="uid://qpuikn40puy7" path="res://UI/Art/BGM.png" id="2_01oo7"]
 [ext_resource type="Texture2D" uid="uid://bqaudo34l7cj8" path="res://UI/Art/Long button.png" id="3_b42tb"]
 [ext_resource type="FontFile" uid="uid://203pdobkt408" path="res://UI/upheavtt.ttf" id="4_4573q"]
@@ -21,11 +21,11 @@ atlas = ExtResource("7_g7y7a")
 region = Rect2(11.082, 7.83894, 10.405, 14.1887)
 
 [node name="Inst" type="Node2D"]
-script = ExtResource("1_o8uxj")
+script = ExtResource("1_xcmhv")
 
 [node name="Bgm" type="Sprite2D" parent="."]
-position = Vector2(544, 251)
-scale = Vector2(8.34474, 8.34474)
+position = Vector2(588, 347)
+scale = Vector2(9.50799, 10.1934)
 texture = ExtResource("2_01oo7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -53,6 +53,7 @@ Hatch eggs by placing them in incubators (purchased from store)
 "
 horizontal_alignment = 1
 autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 619.0
@@ -74,6 +75,7 @@ Remember: Chickens need food to survive, and some evolved ones might eat their d
 Goal: Back-breed these chickens into microraptors... for science!"
 horizontal_alignment = 1
 autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -96,6 +98,7 @@ offset_right = 1056.0
 offset_bottom = 552.0
 scale = Vector2(5, 5)
 texture_normal = SubResource("AtlasTexture_l82by")
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="START"]
 modulate = Color(0.758615, 0.585934, 0.335122, 1)
